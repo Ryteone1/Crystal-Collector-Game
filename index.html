@@ -2,10 +2,84 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>week-4-Game</title>
+	<title>week-4-Game</title>	
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
+
 <body>
-<h1>week 4 game</h1>
+		<div class="jumbotron">
+			<h1 class="text-center">Number to Match: <span id="number-to-match"></span></h1>
+		</div>
+	
+
+	<div id="crystals">
+
+		<!-- <img class="crystal-images" src="assets/images/sapphire.png" alt="crystals">
+		<img class="crystal-images" src="assets/images/zircon.png" alt="crystals">
+		<img class="crystal-images" src="assets/images/emerald.png" alt="crystals">
+		<img class="crystal-images" src="assets/images/ruby.png" alt="crystals"> -->
+
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+	var targetNumber = 55;
+
+	$("#number-to-match").text(targetNumber);
+
+	var counter = 0;
+
+	var numberOptions = [10, 5, 3, 7];
+
+	for (var i = 0; i < numberOptions.length; i++) {
+
+		var imageCrystal = $("<img>");
+
+		imageCrystal.addClass("crystal-images");
+
+		imageCrystal.attr("src", "assets/images/sapphire.png");
+
+		imageCrystal.attr("src", "assets/images/zircon.png");
+
+		imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+
+		$("#crystals").append(imageCrystal);
+	}
+
+
+		
+	$(".crystal-images").on("click", function() {
+
+		var crystalValue = ($(this).attr("data-crystalvalue"));
+		crystalValue = parseInt(crystalValue);
+
+		counter += crystalValue;
+
+		alert("New score: " + counter);
+
+		if (counter === targetNumber) {
+			alert("You win!");
+		}
+
+	});
+
+
+
+
+
+</script>
+
+    
+
+
 	
 </body>
 </html>
