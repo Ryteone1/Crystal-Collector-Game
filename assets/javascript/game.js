@@ -1,9 +1,12 @@
-var targetNumber = Math.floor((Math.random() * 20) + 36);
+
 
 // Game counters
 var winCounter = 0;
 var lossCounter = 0;
 
+function startGame() {
+
+	var targetNumber = Math.floor((Math.random() * 20) + 36);
 
 	$("#crystals-to-collect").text(targetNumber);
 
@@ -47,16 +50,30 @@ var lossCounter = 0;
 
 		$("#number-so-far").text(counter + " crystals!");
 
+
+
 		if (counter === targetNumber) {
 			winCounter++
 			$("#wins").text(winCounter++);
-			alert("You win!");
+			alert("You've won!");
+			startGame();
+			counter = 0;
+			$("#number-so-far").text(counter + " crystals!");
 		}
 
 		else if (counter >= targetNumber) {
 			lossCounter++
 			$("#losses").text(lossCounter++);
-      		alert("You lose!!");
+      		alert("You've lost!!");
+      		startGame();
+      		counter = 0;
+      		$("#number-so-far").text(counter + " crystals!");
       	}
 
+
 	});
+
+}
+
+startGame();
+counter = 0;
