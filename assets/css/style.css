@@ -11,6 +11,7 @@ body {
 #header {
 	text-align: center;
 	margin-bottom: 5px;
+	background: lightgray;
 }	
 
 .crystal-images {
@@ -20,7 +21,8 @@ body {
     margin-top: 20px;
     position: relative;
     left: 70px;
-    border-image: grey;
+    border: 3px solid #ddd; 
+
 	
 
             

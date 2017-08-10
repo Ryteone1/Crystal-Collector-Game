@@ -28,14 +28,15 @@
 
 	<script type="text/javascript">
 
-	var targetNumber = 56;
+	var targetNumber = Math.floor((Math.random() * 20) + 36);
+
 
 	$("#crystals-to-collect").text(targetNumber);
 
 	// var images = $("<img>");
 	// images.addClass("crystalcss");
 
-	var images = ["trollhunters.png", "purplecave.png", "blueart.png", "greyblueart.png"];
+	var images = ["redart.png", "purplecave.png", "blueart.png", "greyblueart.png"];
 
 	var counter = 0;
 	var numCrystals = 4;
