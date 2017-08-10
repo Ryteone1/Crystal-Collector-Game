@@ -15,7 +15,7 @@ function startGame() {
 	// var images = $("<img>");
 	// images.addClass("crystalcss");
 
-	var images = ["redart.png", "purplecave.png", "blueart.png", "greyblueart.png"];
+	var images = ["redart2.png", "purplecave.png", "blueart.png", "greyblueart.png"];
 
 	var counter = 0;
 	var numCrystals = 4;
