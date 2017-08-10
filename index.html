@@ -13,10 +13,22 @@
 </head>
 
 <body>
-	<div id="header">
-		<h2>Collect: <span id="crystals-to-collect"></span> Crystals</h2>
-		<h3>You've collected: <span id="number-so-far"></span></h3>
+	<div id="header1">
+		<h4><strong>Collect: <span id="crystals-to-collect"></span> Crystals</strong></h4>
 	</div>
+
+	<div id="header2">
+		<h4>You've collected: <span id="number-so-far"></span></h4>
+	</div>
+	
+	<div id="header3">
+		<h4>Wins: <span id="wins"></span></h4>
+	</div>
+
+	<div id="header4">
+		<h4>Losses: <span id="losses"></span></h4>
+	</div>
+
 	
 
 	<div id="crystals">
@@ -26,67 +38,9 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-	<script type="text/javascript">
+	<script src="assets/javascript/game.js" type="text/javascript">
 
-	var targetNumber = Math.floor((Math.random() * 20) + 36);
+	</script>    
 
-
-	$("#crystals-to-collect").text(targetNumber);
-
-	// var images = $("<img>");
-	// images.addClass("crystalcss");
-
-	var images = ["redart.png", "purplecave.png", "blueart.png", "greyblueart.png"];
-
-	var counter = 0;
-	var numCrystals = 4;
-
-	var numberOptions = [];
-	for (var i = 0; i < numCrystals; i++) {
-		numberOptions.push(Math.floor((Math.random() * 10) + 1));
-	}
-
-	for (var i = 0; i < numberOptions.length; i++) {
-
-		var imageCrystal = $("<img>");
-
-		imageCrystal.addClass("crystal-images");
-
-		imageCrystal.attr("src", "assets/images/" + images[i]);
-
-
-		imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
-		$("#crystals").append(imageCrystal);
-	}
-
-
-		
-	$(".crystal-images").on("click", function() {
-
-		var crystalValue = ($(this).attr("data-crystalvalue"));
-		crystalValue = parseInt(crystalValue);
-
-		counter += crystalValue;
-
-		$("#number-so-far").text(counter + " crystals!");
-
-		if (counter === targetNumber) {
-
-			alert("You win!");
-		}
-
-	});
-
-
-
-
-
-</script>
-
-    
-
-
-	</div>
 </body>
 </html>
